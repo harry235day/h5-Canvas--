@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="js/swiper/swiper-3.4.2.min.css">
+    <script src="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="js/swiper/swiper-3.4.2.min.js"></script>
+    <!-- 获取当前位置 -->
+    <script src="http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js"></script>
+</head>
+
+<body>
+
+
+    <script type="text/javascript">
+        function go_home(){
+            alert("找房");
+        };
+        function go_licai(){
+            alert("找房");
+        };
+        
+        function show_city(){
+            var city = document.getElementById("cityId");
+            city.style.display = "block";
+        };
+        function dismis_city(){
+            var city = document.getElementById("cityId");
+            city.style.display = "none";
+        };  
+
+        function show_city1(){
+            var city = document.getElementById("cityId");
+            city.style.display = "block";
+        };
+        function dismis_city1(){
+            var city = document.getElementById("cityId");
+            city.style.display = "none";
+        };  
+
+        //给li加点击事件
+
+        $(document).ready(function(){
+            $(".ul_city").on("click","li",function(){
+                var text1 = $(this).text();
+                $(".nav_address_name").text(text1);     
+            })
+            var t = remote_ip_info.city     
+            $(".nav_address_name").text(t); 
+
+            $(".jzgy_list").
+
+            function createDiv(divNum){
+                for (var i = 0;i<divNum; i++) {
+                    $(".jzgy_list").append("<div id='div_list+"+k+"'> "+div内容+"</div>");
+                }
+            }
+
+        });
+        
+        
+    </script>
+
+
+
+
+</style>
+
+
+<div class="header">
+    <!-- 导航栏 -->
+    <nav class="nav">
+        <!-- <a href="http://www.baidu.com" onmouseover="ha_mousedown()" onmouseleave ="hs_mouseup()" id="header_title">小窝</a> -->
+        <div class="nav_logo">
+            <img src="img/ic_logo.png" />
+        </div>
+        <div class="nav_add">
+
+            <div class="nav_address">
+                <span class="nav_span" onmouseover="show_city()" onmouseout="dismis_city()">
+                    <img src="img/map.png"  />
+                    <span class="nav_address_name">北京</span>    
+                </span>
+            </div>
+            <!-- 选择城市 -->
+            <div class="nav_address_city" id="cityId" onmouseover="show_city1()" onmouseout="dismis_city1()">
+                <ul class="ul_city">
+                    <li >北京</li>
+                    <li >上海</li>
+                    <li >砀山</li>
+                    <li>小辛庄</li>
+                    <li >深圳</li>
+                </ul>
+            </div>
+        </div>
+
+
+
+
+
+        <!-- 找房理财 -->
+        <div class="nav_go_home">
+            <span class="nav_go_home_go" onclick="go_home()" >找房</span> 
+            <span class="nav_go_licai_go"onclick="go_licai()" >投资理财</span>  
+        </div>
+
+        <!-- 手机租房 -->
+        <div class="nav_r">
+            
+            <div class="nav_phone_download">
+                <img src="img/phoneHouse.png" alt="二维码"/>
+                <span class="load_title">手机租房</span>
+
+            </div>
+            <div class="nav_service_hone">
+                <span>客服热线:</span>
+                <span>18225988026</span>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="nav_setting">
+        <ul id="nav_ul1">
+            <li><a href="#" >首页</a></li>
+            <li><a href="#" >我的</a></li>
+            <li><a href="#" >更多</a></li>
+        </ul>
+    </div>  
+
+    <hr/>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <a href="#">
+                    <img src="img/banner1.png">
+                </a><p></p>
+            </div>
+            <div class="swiper-slide">
+                <a href="#">
+                    <img src="img/banner2.png">
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <a href="#">
+                    <img src="img/banner2.png">
+                </a>
+            </div>
+        </div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
+
+        <!-- 如果需要导航按钮 -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+        <!-- 如果需要滚动条 -->
+        <div class="swiper-scrollbar"></div>
+    </div>
+
+</div>
+<!-- banner页 -->
+
+
+<!-- 中间模块 -->
+<div class="middle">
+    <div class="div1">
+
+        <div class="div1_header">
+            <img src="img/jzgy.png"/>
+            
+            <div class="jzgy_header">
+                <img src="img/line1.png"/>
+                <span>集中式公寓</span>  
+                <img src="img/line2.png"/>  
+            </div>
+        </div>
+
+        <div class="jzgy_list">
+            <div class="jzgy_list1" >
+                <div class="jzgy_div_img">
+                    <img src="/img/jzgylist1.jpg" class="jzgy_list1_img" alt="公寓图片" />
+                    <span class="jzgy_price">￥13000-1111100</span>
+                </div>
+                 
+                <div>
+                    <p id="jzgy-p1">公寓名称</p>
+                    <p id="jzgy-p2">公寓地址</p>
+                    <p id="jzgy-p3">距离地铁站</p>   
+                </div>
+                
+                
+            </div>  
+        </div>
+
+    </div>
+    <div class="div2">
+        
+    </div>
+    <div class="div3">
+        
+
+    </div>
+</div>
+
+
+
+<!-- 底部模块 -->
+<div class="bottom">
+    <div class="b_cantiner">
+        <div class="bottom_l">
+
+            <div class="l_left">
+                <h3>关于房总管</h3>
+                <nav>
+                    <li>公司介绍</li>
+                    <li>团队介绍</li>
+                    <li>发展历程</li>
+                    <li>新闻中心</li>
+                </nav>
+            </div>
+            <div class="l_right">
+                <h3>联系我们</h3>
+                <nav>
+                    <li>公司介绍公司介绍公司介绍公司介绍公司介绍公司介绍公司介绍公司司介绍公司介绍公司介绍公司介绍公司介绍公司介绍公司介绍</li>
+                    <li>团队介绍</li>
+                    <li>发展历程</li>
+                    <li>新闻中心</li>
+                </nav>  
+            </div>
+        </div>
+
+        <div class="bottom_r">
+            <div class="r_b1">
+                <img src="img/erweima.png">
+                <span>房总管</span>
+            </div>
+            <div class="r_b2">
+                <img src="img/erweima.png">
+                <span>房总管租房</span>
+            </div>
+            <div class="r_b3">
+                <img src="img/erweima.png">
+                <span>房总管金融</span>
+            </div>
+            <div class="r_b4">
+                <img src="img/erweima.png">
+                <span>房总管管理</span>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- swpier 最好紧挨着</body> -->
+<script>        
+    var mySwiper = new Swiper ('.swiper-container', {
+        direction: 'horizontal',
+        loop: true,
+
+    // 如果需要分页器
+    pagination: '.swiper-pagination',
+    
+    // 如果需要前进后退按钮
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+    
+    // 如果需要滚动条
+    scrollbar: '.swiper-scrollbar',
+})        
+</script>
+</body>
+</html>

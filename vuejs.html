@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vuejs渐进式框架</title>
+	<script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+	<div id="appdiv1">
+		{{msg}}
+	</div>
+	<div id="appdiv2">
+		<span v-bind:title="msg">鼠标悬停</span>
+	</div>
+	<div id="appdiv3">
+		<p v-if="see">你看到我了</p>
+	</div>
+
+	<div id="app-4">
+		<ol>
+			<li v-for="list in item">
+				{{list.text}}
+			</li>
+		</ol>
+	</div>
+	<div id="app-5">
+		<div v-for="list in item">
+			<span>{{list.txt}}</span>
+		</div>
+	</div>
+	<embed height="100px" width="100px"></embed>
+	<div id="app-6">
+		<span>{{msg}}</span><br/>
+		<button v-on:click="reveMothed">翻转</button>
+	</div>
+
+	<!-- v-model指令 -->
+	<div id="app-7">
+		<p>{{msg}}</p>
+		<input type="text" name="name" v-model="msg"/>
+	</div>
+	<script type="text/javascript">
+		var app7 = new Vue({
+			el:"#app-7",
+			data:{
+				msg:"aaaa"
+			}
+		})
+
+		var app6 = new Vue({
+			el:'#app-6',
+			data:{
+				msg:"msg!"
+			},
+			methods:{
+				reveMothed: function(){
+					this.msg = this.msg.split('').reverse().join("")
+				}
+			}
+		})
+
+
+
+		var app5 = new Vue({
+			el:"#app-5",
+			data:{
+				item:[
+					{txt:"aaaaaaa"},
+					{txt:"bbbbbbb"},
+					{txt:"ccccccc"}
+				]
+			}
+		})
+
+		var app4 = new Vue({
+			el:"#app-4",
+			data:{
+				item:[
+				{text:"11111"},
+				{text:"111222"},
+				{text:"111333"}
+				]
+			}
+		})
+		app4.item.push({text:"有一个行的"})	
+		var appd = new Vue({
+			el:"#appdiv1",
+			data:{
+			msg:"sss"
+		}
+	})
+
+		var appd2 = new Vue({
+			el:"#appdiv2",
+			data:{
+				msg:"页面加载"+new Date().toLocaleString()
+			}
+		})
+		var app3 = new Vue({
+			el:'#appdiv3',
+			data:{
+				see:true
+			}
+		})
+	</script>
+	
+</body>
+</html>
